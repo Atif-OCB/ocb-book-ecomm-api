@@ -1,5 +1,3 @@
-function home(req, res) {
+export function home(req, res) {
   res.send("Hello World!");
-};
-
-module.exports = { home };
+}

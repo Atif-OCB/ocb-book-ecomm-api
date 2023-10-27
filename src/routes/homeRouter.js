@@ -1,11 +1,11 @@
 // import routes for express
-const express = require("express");
-const router = express.Router();
+import { Router } from "express";
+const router = Router();
 
 // import controller
-const homeController = require("../controllers/homeController");
+import { home } from "../controllers/homeController.js";
 
 // set up routes
-router.get("/", homeController.home);
+router.get("/", home);
 
-module.exports = router;
+export default router;
