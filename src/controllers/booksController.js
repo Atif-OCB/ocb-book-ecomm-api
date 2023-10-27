@@ -1,7 +1,8 @@
 // 1. Get all books
 function getAllBooks(req, res) {
   const books = require("../mocks/books");
-  res.send(books.books);
+  const bookAmount = books.length;
+  res.send({ quantity: bookAmount, books });
 }
 
 // 2. Get book by id
