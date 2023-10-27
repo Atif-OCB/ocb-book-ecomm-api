@@ -1,9 +1,5 @@
-function printHelloWorld(req, res) {
+function home(req, res) {
   res.send("Hello World!");
-}
+};
 
-function meow(req, res) {
-  res.send("Meow");
-}
-
-module.exports = { printHelloWorld, meow };
+module.exports = { home };

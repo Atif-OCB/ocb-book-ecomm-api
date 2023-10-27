@@ -5,15 +5,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
-const homeController = require("./controllers/homeController");
-// app.get("/books", (req, res) => {
-//   const books = require("./mocks/books");
-//   res.send(books.books);
-// });
-const booksController = require("./controllers/booksController");
-app.get("/books", booksController.getAllBooks);
 
-app.get("/", homeController.meow);
+// Setting up routers
+const homeRouter = require("./routes/homeRouter");
+const booksRouter = require("./routes/booksRouter");
+
+app.use("/books", booksRouter);
+app.use("/", homeRouter);
 
 app.listen(3000, () => {
   console.log("listening on port 3000");
