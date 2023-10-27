@@ -1,13 +1,12 @@
 // router for books
-const express = require("express");
-const router = express.Router();
+import { Router } from "express";
+const router = Router();
 
 // import controller
-const booksController = require("../controllers/booksController");
+import { getAllBooks, getBookById } from "../controllers/booksController.js";
 
 // set up routes
-router.get("/", booksController.getAllBooks);
-router.get("/:id", booksController.getBookById);
+router.get("/", getAllBooks);
+router.get("/:id", getBookById);
 
-
-module.exports = router;
+export default router;
